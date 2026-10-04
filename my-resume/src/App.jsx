@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { 
-  Phone, Mail, MapPin, Code2, ExternalLink, 
+  Mail, MapPin, Code2, ExternalLink, 
   Briefcase, GraduationCap, Trophy, Terminal, FolderGit2,
   Gamepad2, ArrowUp, ArrowDown, ArrowLeft, ArrowRight, Play, Pause, RotateCcw, Minus
 } from 'lucide-react';
@@ -241,7 +241,6 @@ export default function App() {
 
         <div className="contact-section">
           <a href="mailto:yuan00324@gmail.com" className="contact-link"><Mail size={18} /> yuan00324@gmail.com</a>
-          <div className="contact-item"><Phone size={18} /> +886 972 236 907</div>
           <div className="contact-item"><MapPin size={18} /> Tainan, Taiwan</div>
           <a href="https://leetcode.com/u/SYLiou/" target="_blank" rel="noreferrer" className="contact-link highlight">
             <Code2 size={18} /> LeetCode Profile <ExternalLink size={14} />
@@ -251,50 +250,126 @@ export default function App() {
         <div className="skills-section">
           <h3 className="sidebar-title">Core Skills</h3>
           <div className="skills-container">
-            <Badge>Java</Badge><Badge>C++</Badge><Badge>Python</Badge>
-            <Badge>Spring Boot 3</Badge><Badge>Kubernetes</Badge>
-            <Badge>Docker</Badge><Badge>SQL</Badge><Badge>Azure</Badge>
+            <Badge>C++</Badge><Badge>Java</Badge><Badge>Python</Badge>
+            <Badge>C</Badge><Badge>Verilog</Badge><Badge>SQL</Badge>
+            <Badge>Spring Boot 3</Badge><Badge>Qt</Badge><Badge>React</Badge>
+            <Badge>Kubernetes (K8s)</Badge><Badge>Docker</Badge><Badge>Azure</Badge>
+            <Badge>PyTorch</Badge><Badge>CI/CD</Badge>
           </div>
         </div>
       </aside>
 
       {/* 中欄：主要履歷內容 */}
       <main className="main-content">
+        
+        {/* --- About Me --- */}
         <section className="resume-section">
           <SectionHeader icon={Terminal} title="About Me" />
           <div className="about-text">
-            <p>Performance-driven <strong>Software Engineer</strong> and Phi Tau Phi inductee with an M.S. in <strong>Artificial Intelligence</strong>. Specializes in high-performance C++ development, firmware validation, and hardware-software co-simulation.</p>
-            <p>Backed by solid experience in migrating core applications to scalable <strong>Kubernetes (K8s) clusters</strong>. Possesses a deep mastery of advanced data structures, memory management, and algorithmic problem-solving.</p>
+            <p>Performance-driven <strong>Software Engineer</strong> and Phi Tau Phi inductee with an M.S. in <strong>Artificial Intelligence</strong>. Specializes in high-performance <strong>C++ development</strong>, firmware validation, and hardware-software co-simulation.</p>
+            <p>Backed by solid experience in migrating core applications to scalable <strong>Kubernetes (K8s) clusters</strong>. Possesses a deep mastery of advanced data structures, memory management, and <strong>algorithmic problem-solving</strong>. Proven track record of bridging rigorous academic research with industrial execution to build highly optimized, mission-critical architectures.</p>
           </div>
         </section>
 
+        {/* --- Experience --- */}
         <section className="resume-section">
           <SectionHeader icon={Briefcase} title="Work Experience" />
-          <Card title="Senior IT Software Engineer" subtitle="Taiwan Semiconductor Manufacturing Company (TSMC)" date="Oct 2025 - Present" location="Tainan, Taiwan" tags={['Java', 'Spring Boot 3', 'Kubernetes']}>
+          
+          <Card title="Senior IT Software Engineer" subtitle="Taiwan Semiconductor Manufacturing Company (TSMC)" date="Oct 2025 - Present" location="Tainan, Taiwan" tags={['Java', 'Spring Boot 3', 'Kubernetes', 'Maven']}>
             <ul className="list">
-              <li>Architected and developed scalable data loaders and microservices.</li>
-              <li>Executed strategic migration of core applications from VMs to Kubernetes.</li>
-              <li>Managed containerized application lifecycles within K8s clusters.</li>
+              <li><strong>Backend Development:</strong> Architected and developed scalable data loaders and microservices using <strong>Java (Maven)</strong> and <strong>Spring Boot 3</strong>, enabling real-time monitoring of factory production data.</li>
+              <li><strong>Cloud Migration:</strong> Executed the strategic migration of core applications from Virtual Machines to <strong>Kubernetes (K8s)</strong>, optimizing deployment workflows and enhancing system scalability.</li>
+              <li><strong>DevOps & Operations:</strong> Managed containerized application lifecycles within K8s clusters, ensuring high availability and consistent uptime for critical manufacturing tools.</li>
             </ul>
           </Card>
-          <Card title="Software Engineer" subtitle="Phison Electronics Corporation" date="Sep 2022 - Oct 2025" location="Miaoli, Taiwan" tags={['C++', 'Qt', 'ARM DS-5']}>
+          
+          <Card title="Software Engineer" subtitle="Phison Electronics Corporation" date="Sep 2022 - Oct 2025" location="Miaoli, Taiwan" tags={['C++', 'Qt', 'ARM DS-5', 'Firmware']}>
             <ul className="list">
-              <li>Developed high-fidelity NAND emulation system in C++.</li>
-              <li>Built GUI-based validation applications using Qt framework.</li>
+              <li><strong>NAND Emulation System:</strong> Developed a high-fidelity NAND emulation system using <strong>C++</strong>, ensuring accurate simulation of flash memory behaviors for firmware validation.</li>
+              <li><strong>Firmware Validation:</strong> Designed rigorous error-handling algorithms and validation protocols to ensure firmware reliability under stress conditions.</li>
+              <li><strong>Tool Development:</strong> Built a GUI-based firmware validation application using <strong>C++</strong> and the <strong>Qt framework</strong>, significantly improving testing efficiency.</li>
+              <li><strong>Hardware Integration:</strong> Leveraged <strong>ARM DS-5</strong> and Evaluation Boards to conduct rigorous hardware-software co-simulation and debugging.</li>
             </ul>
           </Card>
         </section>
 
+        {/* --- Technical Projects --- */}
         <section className="resume-section">
-          <SectionHeader icon={GraduationCap} title="Education & Honors" />
-          <Card title="M.S. in Artificial Intelligence" subtitle="National Cheng Kung University (NCKU)" date="Jan 2020 - Sep 2022">
-            <ul className="list"><li><strong>GPA:</strong> 4.23 / 4.3 (Ranked Top 3%)</li></ul>
+          <SectionHeader icon={FolderGit2} title="Technical Projects" />
+          
+          <Card title="EasyEat - Android App Development" tags={['Java', 'Azure', 'SQL', 'PHP']}>
+            <ul className="list">
+              <li>Developed an MVC-based Android application in <strong>Java</strong>, integrating it with an MSSQL database via PHP APIs.</li>
+              <li>Configured Virtual Machines on <strong>Microsoft Azure</strong> (IaaS) and deployed an Apache server to host the backend.</li>
+            </ul>
           </Card>
-          <div className="awards-container" style={{marginTop: '1rem'}}>
-            <div className="award-item"><span className="award-title">LeetCode Top 1.28%</span><span className="award-desc">Rating of 2,134. Ranked 378th globally (May 2024).</span></div>
-            <div className="award-item"><span className="award-title">AI CUP 2021 Top 10</span><span className="award-desc">10th / 523 teams in Crop Location Auto-Labeling.</span></div>
+
+          <Card title="Medical Imaging AI (Fetal NT & Spinal Registration)" tags={['Deep Learning', 'Computer Vision', 'CNN']}>
+            <ul className="list">
+              <li>Developed a multi-stage CNN to locate fetal 2D planes in 3D ultrasound images for Down syndrome risk prediction.</li>
+              <li>Created a neural network pipeline to register 3D spinal CT images with 2D fluoroscopy to enhance surgical precision.</li>
+            </ul>
+          </Card>
+
+          <Card title="RISC-V CPU Design" tags={['Verilog HDL']}>
+            <ul className="list">
+              <li>Implemented ALU and decoder modules using <strong>Verilog HDL</strong> to execute a comprehensive set of RISC-V instructions.</li>
+            </ul>
+          </Card>
+        </section>
+
+        {/* --- Education --- */}
+        <section className="resume-section">
+          <SectionHeader icon={GraduationCap} title="Education" />
+          
+          <Card title="M.S. in Artificial Intelligence Master Program" subtitle="National Cheng Kung University (NCKU)" date="Jan 2020 - Sep 2022">
+            <ul className="list">
+              <li><strong>GPA:</strong> 4.23 / 4.3 (Ranked Top 3%)</li>
+              <li><strong>Honor:</strong> <strong>Phi Tau Phi Scholastic Honor Society Member</strong> (Recognizing exceptional academic achievement and character).</li>
+            </ul>
+          </Card>
+          
+          <Card title="M.S. Institute of Molecular and Cellular Biology" subtitle="National Taiwan University (NTU)" date="Sep 2014 - Aug 2016">
+            <ul className="list">
+              <li><strong>GPA:</strong> 3.78 / 4</li>
+              <li><strong>Publication:</strong> Co-authored <em>"Presynaptic SNAP-25 regulates retinal waves and retinogeniculate projection via phosphorylation"</em>, published in <strong>PNAS</strong> (Feb. 2019).</li>
+            </ul>
+          </Card>
+
+          <Card title="B.S. in Bio-Agriculture Technology" subtitle="National Chiayi University (NCYU)" date="Sep 2010 - Jun 2014">
+            <ul className="list">
+              <li><strong>Honors:</strong> Class Valedictorian.</li>
+            </ul>
+          </Card>
+        </section>
+
+        {/* --- Honors & Awards --- */}
+        <section className="resume-section">
+          <SectionHeader icon={Trophy} title="Honors & Awards" />
+          <div className="awards-container">
+            <div className="award-item">
+              <span className="award-title">LeetCode Algorithm Contest</span>
+              <span className="award-desc">Achieved a <strong>Rating of 2,134</strong>, placing in the <strong>Top 1.28%</strong> of global participants.</span>
+            </div>
+            <div className="award-item">
+              <span className="award-title">Global Programming Ranking</span>
+              <span className="award-desc">Ranked <strong>378th</strong> globally in LeetCode Weekly Contest 397 (May 2024).</span>
+            </div>
+            <div className="award-item">
+              <span className="award-title">AI CUP 2021 Top 10</span>
+              <span className="award-desc">Ranked <strong>10th / 523 teams</strong> in the AI CUP 2021 (Crop Location Auto-Labeling).</span>
+            </div>
+            <div className="award-item">
+              <span className="award-title">Phi Tau Phi Honor Society</span>
+              <span className="award-desc">Selected for the Phi Tau Phi Honor Society (Top 3% of graduating class at NCKU).</span>
+            </div>
+            <div className="award-item">
+              <span className="award-title">Dean's List Scholarship</span>
+              <span className="award-desc">Dean's List Award recipient (6 semesters) at NCYU.</span>
+            </div>
           </div>
         </section>
+
       </main>
 
       {/* 右欄：遊戲面板 */}
