@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #f1f5f9;
+  --sidebar-bg: #0f172a;
+  --sidebar-text: #f8fafc;
+  --text-main: #334155;
+  --text-muted: #64748b;
+  --primary: #3b82f6;
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+
+/* 🌟 三欄式佈局 (Left: Profile, Mid: Resume, Right: Game) */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 0 1.5rem;
+}
+
+/* 左側欄位 */
+.sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+}
+
+.avatar-placeholder { width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), #8b5cf6); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+.name { font-size: 1.8rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.2rem; }
+.headline { font-size: 1rem; color: #94a3b8; font-weight: 500; }
+.sub-headline { font-size: 0.85rem; color: #64748b; }
+.contact-section { display: flex; flex-direction: column; gap: 0.8rem; }
+.contact-item, .contact-link { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: #cbd5e1; text-decoration: none; }
+.contact-link:hover { color: white; }
+.contact-link.highlight { color: #60a5fa; }
+.sidebar-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 0.8rem; }
+
+/* 標籤樣式 */
+.bg-blue-100 { background-color: #dbeafe; } .text-blue-700 { color: #1d4ed8; }
+.bg-indigo-100 { background-color: #e0e7ff; } .text-indigo-700 { color: #4338ca; }
+.bg-slate-50 { background-color: #f8fafc; } .text-slate-600 { color: #475569; }
+.border-slate-300 { border-color: #cbd5e1; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; } .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.text-sm { font-size: 0.875rem; } .font-medium { font-weight: 500; }
+.rounded-full { border-radius: 9999px; } .inline-block { display: inline-block; }
+.mb-2 { margin-bottom: 0.5rem; } .mr-2 { margin-right: 0.5rem; }
+.border { border-width: 1px; border-style: solid; }
+
+/* 中間履歷區 */
+.main-content { flex: 1; min-width: 450px; padding: 3rem 0; }
+.resume-section { margin-bottom: 3rem; }
+.section-header { display: flex; align-items: center; gap: 0.75rem; font-size: 1.4rem; font-weight: 700; color: #0f172a; margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-color); }
+.icon-main { color: var(--primary); }
+.about-text p { margin-bottom: 1rem; font-size: 1rem; color: #475569; }
+
+/* 卡片與列表 */
+.card { background: var(--card-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+.card-title { font-size: 1.15rem; font-weight: 600; color: #0f172a; }
+.card-subtitle { font-size: 0.95rem; color: var(--primary); font-weight: 500; margin-top: 0.2rem; }
+.card-meta { text-align: right; font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; }
+.list { padding-left: 1.25rem; color: #475569; font-size: 0.95rem; }
+.list li { margin-bottom: 0.4rem; }
+.list li::marker { color: var(--primary); }
+.card-tags { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed var(--border-color); }
+.awards-container { display: flex; flex-direction: column; gap: 1rem; }
+.award-item { background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--primary); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.award-title { display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.2rem; }
+.award-desc { font-size: 0.9rem; color: #475569; }
+
+/* 右側遊戲區 */
+.right-sidebar {
+  width: 360px;
+  flex-shrink: 0;
+  padding: 3rem 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.game-panel {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+}
+.game-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
+
+/* 🎮 遊戲 UI 設計 */
+.snake-container { display: flex; flex-direction: column; align-items: center; }
+.snake-header { width: 100%; display: flex; justify-content: space-between; align-items: center; font-family: 'Courier New', monospace; font-weight: 700; color: #334155; margin-bottom: 0.8rem; font-size: 0.95rem; background: #f8fafc; padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid #e2e8f0; }
+.snake-highlight { color: var(--primary); font-size: 1.1rem; }
+.dir-display { display: flex; align-items: center; gap: 0.5rem; }
+.dir-icon-box { background: white; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px; width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; }
+.snake-stage { width: 300px; height: 300px; background-color: #e2e8f0; position: relative; border: 2px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); }
+.snake-body { width: 10px; height: 10px; background-color: var(--primary); position: absolute; border: 1px solid #93c5fd; border-radius: 2px; }
+.snake-body:first-child { background-color: #1e40af; }
+.snake-food { width: 10px; height: 10px; background-color: #ef4444; position: absolute; border-radius: 50%; box-shadow: 0 0 6px rgba(239,68,68,0.8); animation: pulse 0.8s infinite alternate; }
+
+@keyframes pulse { 0% { transform: scale(0.8); } 100% { transform: scale(1.15); box-shadow: 0 0 10px rgba(239,68,68,1); } }
+.snake-overlay { position: absolute; inset: 0; background-color: rgba(255,255,255,0.85); display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 700; color: #334155; text-align: center; }
+.snake-overlay.game-over { background-color: rgba(254,226,226,0.9); color: #b91c1c; font-size: 1.5rem; }
+
+/* 遊戲按鈕區 */
+.snake-controls { display: flex; gap: 0.5rem; margin-top: 1rem; width: 100%; }
+.ctrl-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.6rem 0; border: none; border-radius: 6px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; color: white; }
+.ctrl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.start-btn { background-color: #10b981; } .start-btn:hover:not(:disabled) { background-color: #059669; }
+.pause-btn { background-color: #f59e0b; } .pause-btn:hover:not(:disabled) { background-color: #d97706; }
+.restart-btn { background-color: #ef4444; } .restart-btn:hover:not(:disabled) { background-color: #dc2626; }
+
+/* 📱 響應式：螢幕變小時改變佈局 */
+@media (max-width: 1280px) {
+  .app-container { flex-wrap: wrap; justify-content: center; }
+  .right-sidebar { width: 100%; height: auto; position: static; padding-top: 0; }
+  .game-panel { max-width: 400px; margin: 0 auto; }
+}
+@media (max-width: 900px) {
+  .sidebar { width: 100%; height: auto; position: static; border-radius: 0; }
+  .main-content { min-width: 100%; }
+}
